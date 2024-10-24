@@ -45,8 +45,7 @@
 ## Установка
 
 1. Клонируйте репозиторий:
-   ```bash
-   git clone https://github.com/ваш_пользователь/ваш_репозиторий.git
+   git clone https://github.com/Deniska1644/test_shabalov.git
 
 2. Файл example.env нужно переназвать на .env, он уже готов к запуску
 3. Собрать образ в *docker-compose build*
