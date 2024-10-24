@@ -40,7 +40,7 @@ class UserDBWorcker(DbWorcker):
                 print(e)
                 return False
 
-    async def get_user(self, filter_field: str, filter_value: int | str):
+    async def get_user(self, filter_field: str, filter_value: int | str) -> User | None:
         async with self.async_session_maker() as session:
             try:
                 query = select(User).where(
@@ -52,7 +52,7 @@ class UserDBWorcker(DbWorcker):
             except IntegrityError:
                 return False
 
-    async def update_user_refreshtoken(self, login: str, refreshtoken: str):
+    async def update_user_refreshtoken(self, login: str, refreshtoken: str) -> bool:
         async with self.async_session_maker() as session:
             try:
                 query = select(User).where(User.login == login)
@@ -87,7 +87,7 @@ class UserDBWorcker(DbWorcker):
             except IntegrityError:
                 return None
 
-    async def get_all_refered_by_id(self, id):
+    async def get_all_refered_by_id(self, id) -> User | None:
         async with self.async_session_maker() as session:
             try:
                 query = (

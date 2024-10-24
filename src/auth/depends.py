@@ -97,5 +97,5 @@ async def get_inform_ref(referal: str = None):
         if res is None:
             raise referal_not_exist
         if res.life_time < datetime.now():
-            return res
-        raise referal_time_expired
+            raise referal_time_expired
+        return res

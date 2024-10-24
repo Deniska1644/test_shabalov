@@ -53,7 +53,7 @@ async def register_user(
     )
     if register_status:
         return tokens
-    return {'status': 'hz'}
+    raise user_alredy_exist
 
 
 @router.post('/refresh_token')
